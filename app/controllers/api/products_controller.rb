@@ -14,7 +14,7 @@ class Api::ProductsController < ApplicationController
                           )
 
     if @product.save
-      render 'show.json.jbuilder'
+      render :show
     else
       render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
     end

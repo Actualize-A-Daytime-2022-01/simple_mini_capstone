@@ -1,0 +1,28 @@
+### PRODUCTS INDEX
+GET http://localhost:3000/products.json?category=Cheap&category=Wearable
+
+### PRODUCTS CREATE
+POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "Hello Kitty Rice Cooker",
+  "price": 32,
+  "image_url": "https://i5.walmartimages.com/asr/8fbcad21-ef6e-43a7-8308-25411b44436d_1.2be433602da0fe22a1efb4b2170cc819.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+  "description": "makes the cutest rice!"
+}
+
+### PRODUCTS SHOW
+GET http://localhost:3000/products/8.json
+
+### PRODUCTS UPDATE
+PATCH http://localhost:3000/products/8.json
+Content-Type: application/json
+
+{
+  "name": "Hello Kitty Rice Cooker",
+  "price": 100
+}
+
+### PRODUCTS DESTROY
+DELETE http://localhost:3000/products/8.json
