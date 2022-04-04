@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    render 'index.json.jbuilder'
+    render :index
   end
 
   def create
@@ -22,7 +22,7 @@ class Api::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    render 'show.json.jbuilder'
+    render :show
   end
 
   def update
@@ -34,7 +34,7 @@ class Api::ProductsController < ApplicationController
     @product.image_url = params[:image_url] || @product.image_url
 
     if @product.save
-      render 'show.json.jbuilder'
+      render :show
     else
       render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
     end
